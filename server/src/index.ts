@@ -6,6 +6,7 @@ import { LotteryContract } from './contracts'
 if (!process.env.MNEMONIC || !process.env.RPC_URL) {
   process.exit(1)
 }
+
 const walletProvider = new HDWalletProvider(process.env.MNEMONIC, process.env.RPC_URL)
 
 const provider = new ethers.providers.Web3Provider(walletProvider)

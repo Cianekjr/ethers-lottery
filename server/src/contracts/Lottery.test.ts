@@ -10,7 +10,7 @@ const {
 
 chaiUse(chaiAsPromised)
 
-// @ts-ignore
+// @ts-ignore // ganache provides incompatible types
 const provider = new ethers.providers.Web3Provider(ganache.provider())
 
 const managerId = 0

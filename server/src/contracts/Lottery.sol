@@ -45,6 +45,7 @@ contract Lottery {
     function pickWinner() public payable {
         require(msg.sender == manager, "Only the manager can pick a winner");
         require(tickets.length > 0, "There are no tickets in the lottery");
+
         address payable winner = payable(drawWinner());
 
         winner.transfer(address(this).balance);
