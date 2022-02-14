@@ -1,7 +1,13 @@
 {
-  "name": "client",
-  "version": "0.1.0",
-  "private": true,
+  "name": "etherlottery-client",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "lint": "eslint --fix --ext .js,.ts ."
+  },
   "dependencies": {
     "@metamask/providers": "^8.1.1",
     "@testing-library/jest-dom": "^5.16.2",
@@ -18,17 +24,32 @@
     "typescript": "^4.5.5",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "plugin:prettier/recommended"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "parser": "flow",
+          "semi": false,
+          "tabWidth": 2,
+          "printWidth": 180
+        }
+      ]
+    }
   },
   "browserslist": {
     "production": [
