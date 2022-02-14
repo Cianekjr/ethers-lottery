@@ -1,6 +1,6 @@
 import path from 'path'
 import fs from 'fs'
-// @ts-ignore
+// @ts-ignore // solc library doesn't provide typescript definitions
 import solc from 'solc'
 
 const LotteryContractPath = path.resolve(__dirname, 'Lottery.sol')

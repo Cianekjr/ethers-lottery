@@ -1,9 +1,12 @@
 import 'dotenv/config'
-const HDWalletProvider = require('@truffle/hdwallet-provider')
+import HDWalletProvider from '@truffle/hdwallet-provider'
 import { ethers } from 'ethers'
 import { LotteryContract } from './contracts'
 
-const walletProvider = new HDWalletProvider(process.env.MNEMONIC, 'https://rinkeby.infura.io/v3/22aa2b6fa5314abaaf18a8b552ec9c73')
+if (!process.env.MNEMONIC || !process.env.RPC_URL) {
+  process.exit(1)
+}
+const walletProvider = new HDWalletProvider(process.env.MNEMONIC, process.env.RPC_URL)
 
 const provider = new ethers.providers.Web3Provider(walletProvider)
 
